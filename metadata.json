@@ -1,0 +1,5 @@
+{
+  "name": "CrossFit Pro & Calc",
+  "description": "Una aplicación web profesional para atletas de CrossFit. Calcula porcentajes de levantamiento (RM) instantáneamente y gestiona tu programación diaria (WOD) con asistencia de IA.",
+  "requestFramePermissions": []
+}
