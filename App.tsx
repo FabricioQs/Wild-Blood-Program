@@ -70,19 +70,26 @@ const App: React.FC = () => {
             {/* Background Texture/Gradient for Grunge feel */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-stone-900 via-black to-black opacity-80 z-0"></div>
 
-            <div className="mb-12 text-center flex flex-col items-center z-10 w-full max-w-md">
-                {/* Logo Placeholder - Displaying RAW Image without circular cut or text */}
-                <div className="w-full h-auto mb-4 bg-black flex items-center justify-center relative transition-transform duration-500 hover:scale-105">
+            <div className="mb-12 text-center flex flex-col items-center z-10">
+                {/* Reverted to Circular Logo with Text */}
+                <div className="w-48 h-48 mb-6 bg-black rounded-full flex items-center justify-center relative overflow-hidden shadow-[0_0_40px_rgba(185,28,28,0.3)] border-4 border-stone-800 transition-transform duration-500 hover:scale-105 group">
                      <img 
                         src="wildblood_logo.png" 
                         alt="Wild Blood Logo" 
-                        className="w-full h-auto object-contain max-w-[320px]"
+                        className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity"
                         onError={(e) => {
                             // Fallback if image is missing
                             e.currentTarget.style.display = 'none';
                         }}
                      />
+                     {/* Fallback Text if image fails */}
+                     <span className="absolute text-cf-accent font-black text-4xl italic opacity-0 group-hover:opacity-0">WB</span>
                 </div>
+                
+                <h1 className="text-5xl font-black italic uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-white via-cf-cream to-stone-400 drop-shadow-sm">
+                    Wild Blood
+                </h1>
+                <p className="text-cf-accent font-bold tracking-[0.3em] text-sm mt-2 uppercase">Programming</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-lg z-10">
@@ -128,9 +135,9 @@ const App: React.FC = () => {
              </div>
 
              <div className="w-full max-w-sm bg-stone-900 p-8 rounded-2xl border border-stone-800 shadow-2xl relative">
-                {/* Logo on Login - Removed Circle to match blend */}
-                <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 w-24 h-24 bg-black overflow-hidden flex items-center justify-center shadow-lg">
-                    <img src="wildblood_logo.png" className="w-full h-full object-contain" alt="WB" />
+                {/* Logo on Login - Reverted to Circular */}
+                <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 w-24 h-24 bg-black rounded-full border-4 border-stone-800 overflow-hidden flex items-center justify-center shadow-lg">
+                    <img src="wildblood_logo.png" className="w-full h-full object-cover" alt="WB" />
                 </div>
 
                 <div className="mt-10 mb-8 text-center">
@@ -184,12 +191,12 @@ const App: React.FC = () => {
       <header className="bg-black/80 backdrop-blur-xl sticky top-0 z-50 border-b border-stone-800">
         <div className="max-w-3xl mx-auto px-4 py-3 flex justify-between items-center gap-4">
           <div className="flex items-center gap-3">
-             {/* Small header logo - Removed Circle */}
-             <div className="w-10 h-10 overflow-hidden bg-black flex items-center justify-center relative shrink-0">
+             {/* Small header logo - Reverted to Circular */}
+             <div className="w-10 h-10 rounded-full overflow-hidden bg-stone-800 border border-stone-700 flex items-center justify-center relative shrink-0">
                  <img 
                     src="wildblood_logo.png" 
                     alt="WB" 
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-cover"
                     onError={(e) => { e.currentTarget.style.display='none' }}
                  />
             </div>
